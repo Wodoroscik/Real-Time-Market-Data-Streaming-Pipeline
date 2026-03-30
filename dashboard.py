@@ -12,7 +12,7 @@ while True:
     try:
         with sqlite3.connect('market_data.db') as conn:
             df = pd.read_sql("SELECT * FROM market_aggs", conn)
-    except sqlite3.OperationalError:
+    except (sqlite3.OperationalError, pd.errors.DatabaseError):
         df = pd.DataFrame()
 
     with placeholder.container():
