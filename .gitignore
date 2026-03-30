@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+*.pyc
+
+market_data.db
+kafka_data/
+
+.DS_Store
